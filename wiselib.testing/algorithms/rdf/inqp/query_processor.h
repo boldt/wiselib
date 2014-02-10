@@ -385,7 +385,13 @@ namespace wiselib {
 				if(queries_.size() >= queries_.capacity()) {
 					assert(false && "queries full, clean them up from time to time!");
 				}
+			    #ifdef ISENSE
+				    GET_OS.debug("set queries_[%d]", qid);
+			    #endif
 				queries_[qid] = q;
+			    #ifdef ISENSE
+				    GET_OS.debug("return q");
+			    #endif
 				return q;
 			}
 			
