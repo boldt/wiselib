@@ -147,7 +147,7 @@
 	#define INSE_MAX_NEIGHBORS             8
 	#define WISELIB_MAX_NEIGHBORS          (INSE_MAX_NEIGHBORS)
 	#define INSE_MAX_SEMANTIC_ENTITIES     5
-	#define INSE_MAX_QUERIES               2
+	#define INSE_MAX_QUERIES               4
 
 	#define INSE_CSMA_MODE                 0
 	

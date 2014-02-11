@@ -380,15 +380,25 @@ namespace wiselib {
 			}
 			
 			Query* create_query(query_id_t qid) {
+			    #ifdef ISENSE
+				    GET_OS.debug("Allocate Query!");
+			    #endif
 				Query *q = ::get_allocator().template allocate<Query>().raw();
+
+			    #ifdef ISENSE
+				    GET_OS.debug("q->init(this, %d)", qid);
+			    #endif
 				q->init(this, qid);
+
 				if(queries_.size() >= queries_.capacity()) {
 					assert(false && "queries full, clean them up from time to time!");
 				}
+
 			    #ifdef ISENSE
 				    GET_OS.debug("set queries_[%d]", qid);
 			    #endif
 				queries_[qid] = q;
+
 			    #ifdef ISENSE
 				    GET_OS.debug("return q");
 			    #endif
